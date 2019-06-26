@@ -83,7 +83,7 @@ public class Calculadora extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        lblGC = new javax.swing.JLabel();
+        lblGCStatus = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         lblMM = new javax.swing.JLabel();
@@ -93,9 +93,14 @@ public class Calculadora extends javax.swing.JFrame {
         lblInfoGC = new javax.swing.JLabel();
         lblInfoMM = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        lblICA = new javax.swing.JLabel();
+        lblICAStatus = new javax.swing.JLabel();
         lblInfoMM1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        lblIMCStatus = new javax.swing.JLabel();
+        lblTMBStatus = new javax.swing.JLabel();
+        lblGC1 = new javax.swing.JLabel();
+        lblMMStatus = new javax.swing.JLabel();
+        lblICA1 = new javax.swing.JLabel();
         PanelInfo = new javax.swing.JPanel();
         lblInfo = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -438,8 +443,8 @@ public class Calculadora extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("GC");
 
-        lblGC.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        lblGC.setText("...");
+        lblGCStatus.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblGCStatus.setText("...");
 
         jLabel14.setText("Porcentaje de Grasa Corporal");
 
@@ -488,8 +493,8 @@ public class Calculadora extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("ICA");
 
-        lblICA.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        lblICA.setText("...");
+        lblICAStatus.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblICAStatus.setText("...");
 
         lblInfoMM1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Info_32.png"))); // NOI18N
         lblInfoMM1.setToolTipText("");
@@ -501,6 +506,20 @@ public class Calculadora extends javax.swing.JFrame {
 
         jLabel18.setText("Indice Cintura Altura");
 
+        lblIMCStatus.setText("...");
+
+        lblTMBStatus.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblTMBStatus.setText("...");
+
+        lblGC1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblGC1.setText("...");
+
+        lblMMStatus.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblMMStatus.setText("...");
+
+        lblICA1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblICA1.setText("...");
+
         javax.swing.GroupLayout PanelResultadosLayout = new javax.swing.GroupLayout(PanelResultados);
         PanelResultados.setLayout(PanelResultadosLayout);
         PanelResultadosLayout.setHorizontalGroup(
@@ -511,10 +530,7 @@ public class Calculadora extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jLabel10)
                     .addComponent(jLabel14)
-                    .addGroup(PanelResultadosLayout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblGC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelResultadosLayout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -522,8 +538,19 @@ public class Calculadora extends javax.swing.JFrame {
                     .addGroup(PanelResultadosLayout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(lblIMC, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblIMC, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
+                .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelResultadosLayout.createSequentialGroup()
+                        .addComponent(lblIMCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelResultadosLayout.createSequentialGroup()
+                        .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTMBStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(PanelResultadosLayout.createSequentialGroup()
+                                .addComponent(lblGCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblInfoGC)
                     .addComponent(lblInfoIMC)
@@ -532,66 +559,97 @@ public class Calculadora extends javax.swing.JFrame {
                 .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addComponent(jLabel15)
-                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelResultadosLayout.createSequentialGroup()
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblMM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelResultadosLayout.createSequentialGroup()
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblICA, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PanelResultadosLayout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblMM, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMMStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblICAStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblInfoMM)
                     .addComponent(lblInfoMM1)))
+            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelResultadosLayout.createSequentialGroup()
+                    .addGap(126, 126, 126)
+                    .addComponent(lblGC1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(740, 740, 740)))
+            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelResultadosLayout.createSequentialGroup()
+                    .addGap(624, 624, 624)
+                    .addComponent(lblICA1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(228, 228, 228)))
         );
         PanelResultadosLayout.setVerticalGroup(
             PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelResultadosLayout.createSequentialGroup()
-                .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PanelResultadosLayout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addComponent(lblInfoTMB)
-                            .addGap(19, 19, 19)
-                            .addComponent(lblInfoGC))
-                        .addComponent(lblInfoIMC))
-                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PanelResultadosLayout.createSequentialGroup()
-                            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblMM)
-                                .addComponent(jLabel13))
-                            .addGap(22, 22, 22)
-                            .addComponent(jLabel15)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblICA)
-                                .addComponent(jLabel17))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel18))
-                        .addGroup(PanelResultadosLayout.createSequentialGroup()
-                            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblIMC)
-                                .addComponent(jLabel9))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel10)
-                            .addGap(7, 7, 7)
-                            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(lblTMB))
-                            .addGap(16, 16, 16)
-                            .addComponent(jLabel11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel12)
-                                .addComponent(lblGC)))))
+                .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelResultadosLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(lblInfoTMB)
+                        .addGap(19, 19, 19)
+                        .addComponent(lblInfoGC))
+                    .addComponent(lblInfoIMC))
                 .addGap(7, 7, 7)
                 .addComponent(jLabel14))
             .addGroup(PanelResultadosLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(lblInfoMM1))
             .addComponent(lblInfoMM)
+            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelResultadosLayout.createSequentialGroup()
+                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblMM)
+                        .addComponent(jLabel13)
+                        .addComponent(lblMMStatus))
+                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(PanelResultadosLayout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addComponent(jLabel15)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel18))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelResultadosLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblICAStatus)
+                            .addGap(10, 10, 10))))
+                .addGroup(PanelResultadosLayout.createSequentialGroup()
+                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblIMC)
+                        .addComponent(jLabel9)
+                        .addComponent(lblIMCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel10)
+                    .addGap(7, 7, 7)
+                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(lblTMB)
+                        .addComponent(lblTMBStatus))
+                    .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelResultadosLayout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(jLabel11)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel12)
+                            .addGap(0, 22, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelResultadosLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblGCStatus)
+                            .addContainerGap()))))
+            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelResultadosLayout.createSequentialGroup()
+                    .addContainerGap(120, Short.MAX_VALUE)
+                    .addComponent(lblGC1)
+                    .addContainerGap()))
+            .addGroup(PanelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelResultadosLayout.createSequentialGroup()
+                    .addContainerGap(75, Short.MAX_VALUE)
+                    .addComponent(lblICA1)
+                    .addGap(57, 57, 57)))
         );
 
         PanelInfo.setBorder(javax.swing.BorderFactory.createTitledBorder("Info"));
@@ -717,7 +775,7 @@ public class Calculadora extends javax.swing.JFrame {
                     .addComponent(cboUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNuevo)
                     .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(PanelTipodeActividad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -804,8 +862,8 @@ public class Calculadora extends javax.swing.JFrame {
         }
         lblIMC.setText(new formulas().getIMC(Integer.parseInt(spEdad.getValue().toString()), Double.parseDouble(spAltura.getText()), Double.parseDouble(txtPeso.getText())));
         lblTMB.setText(new formulas().getTMB(Double.parseDouble(txtPeso.getText()), Integer.parseInt(spAltura.getText()), Integer.parseInt(spEdad.getValue().toString()), sexo, act));
-        lblGC.setText(new formulas().getGC(sexo, Double.parseDouble(txtCircunCintura.getText()), Double.parseDouble(txtCircunCuello.getText()), Double.parseDouble(spAltura.getText()), Double.parseDouble(txtCircunCadera.getText()), Integer.parseInt(spEdad.getValue().toString())));
-        lblICA.setText(new formulas().getIca(Double.parseDouble(spAltura.getText()), Double.parseDouble(txtCircunCintura.getText())));
+        lblGCStatus.setText(new formulas().getGC(sexo, Double.parseDouble(txtCircunCintura.getText()), Double.parseDouble(txtCircunCuello.getText()), Double.parseDouble(spAltura.getText()), Double.parseDouble(txtCircunCadera.getText()), Integer.parseInt(spEdad.getValue().toString())));
+        lblICAStatus.setText(new formulas().getIca(Double.parseDouble(spAltura.getText()), Double.parseDouble(txtCircunCintura.getText())));
         lblMM.setText(new formulas().getMM(sexo, Double.parseDouble(txtCircunCintura.getText()), Double.parseDouble(txtCircunCuello.getText()), Double.parseDouble(spAltura.getText()), Double.parseDouble(txtCircunCadera.getText()), Integer.parseInt(spEdad.getValue().toString()), Double.parseDouble(txtPeso.getText())));
         btnSalvar.setEnabled(true);
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -881,7 +939,7 @@ public class Calculadora extends javax.swing.JFrame {
         Conector co = new Conector();
         co.connect();
         co.setDiario(spEdad.getValue().toString(), txtPeso.getText(), spAltura.getText(), txtCircunCintura.getText()
-                , txtCircunCuello.getText(), txtCircunCadera.getText(), lblIMC.getText(), lblTMB.getText(), lblGC.getText(),
+                , txtCircunCuello.getText(), txtCircunCadera.getText(), lblIMC.getText(), lblTMB.getText(), lblGCStatus.getText(),
                 lblMM.getText(), cboUsuarios.getSelectedItem().toString());
         co.getDiario(jtblDiario, cboUsuarios.getSelectedItem().toString());
         new varias().setOcultarColumnasJTable(jtblDiario, new int[]{0,0});
@@ -1000,9 +1058,12 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTable jtblDiario;
-    private javax.swing.JLabel lblGC;
-    private javax.swing.JLabel lblICA;
+    private javax.swing.JLabel lblGC1;
+    private javax.swing.JLabel lblGCStatus;
+    private javax.swing.JLabel lblICA1;
+    private javax.swing.JLabel lblICAStatus;
     private javax.swing.JLabel lblIMC;
+    private javax.swing.JLabel lblIMCStatus;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblInfoGC;
     private javax.swing.JLabel lblInfoIMC;
@@ -1010,7 +1071,9 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JLabel lblInfoMM1;
     private javax.swing.JLabel lblInfoTMB;
     private javax.swing.JLabel lblMM;
+    private javax.swing.JLabel lblMMStatus;
     private javax.swing.JLabel lblTMB;
+    private javax.swing.JLabel lblTMBStatus;
     private javax.swing.JMenu mnuArchivo;
     private javax.swing.JMenuItem mnuEliminar;
     private javax.swing.JMenuItem mnuSalir;
