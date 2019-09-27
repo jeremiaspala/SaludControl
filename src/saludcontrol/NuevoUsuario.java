@@ -69,9 +69,10 @@ public class NuevoUsuario extends javax.swing.JDialog {
         Conector con = new Conector();
         con.connect();
         con.setUsuario(txtUusuario.getText().toString());
-        Calculadora.cboUsuarios.removeAllItems();
-        con.getDiario(Calculadora.jtblDiario, Calculadora.cboUsuarios.getSelectedItem().toString());
-        new varias().setOcultarColumnasJTable(Calculadora.jtblDiario, new int[]{0,0});
+        //con.getUsuarios(Calculadora.cboUsuarios);
+        //Calculadora.cboUsuarios.removeAllItems();
+        //con.getDiario(Calculadora.jtblDiario, Calculadora.cboUsuarios.getSelectedItem().toString());
+        //new varias().setOcultarColumnasJTable(Calculadora.jtblDiario, new int[]{0,0});
         con.close();
         this.dispose();
     }//GEN-LAST:event_btnOkActionPerformed
